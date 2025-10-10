@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hacked!!!!!!!!!!!!!!!!!!!!</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-color: black;
+            color: greenyellow;
+            font-family: monospace;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        h5 {
+            color: darkorchid;
+        }
+
+        #btn {
+            color: aqua;
+            background-color: transparent;
+            border: 2px solid aqua;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>FREE SONGS IN ALL LANGUAGES</h1>
+    <h5>Click the button below to get into our website and download thousands of songs for free, no need to download any apps.</h5>
+
+    <button type="button" onclick="myFunction()" id="btn">Enter Now</button>
+
+    <div id="output"></div>
+
+    <script>
+        function myFunction() {
+            alert("THIS ACTION IS NOT REVERSIBLE. PROCEED IF YOU WANT!");
+            alert("SYSTEM CORE DETECTED");
+
+            const outputDiv = document.getElementById("output");
+
+            setTimeout(() => {
+                let countdown = 5;
+                const countdownInterval = setInterval(() => {
+                    outputDiv.textContent += `Remaining time: ${countdown} second${countdown !== 1 ? 's' : ''}...\n`;
+                    countdown--;
+
+                    if (countdown < 0) {
+                        clearInterval(countdownInterval);
+                        startSequence();
+                    }
+                }, 1000);
+            }, 10000);
+
+            function startSequence() {
+                setTimeout(() => {
+                        outputDiv.textContent += "Scanning system data...\n";
+
+                setTimeout(() => {
+                        outputDiv.textContent += "Analysing software...\n";
+
+                setTimeout(() => {
+                        outputDiv.textContent += "Deleting software...\n";
+
+                setTimeout(() => {
+                        outputDiv.textContent += "Error occurred...\n";
+
+                setTimeout(() => {
+                        outputDiv.textContent += "System breached... Malware detected...\n";
+
+                setTimeout(() => {
+                        outputDiv.textContent += "System failed. (Just Kidding!)\n";
+
+                setTimeout(() => {
+                        outputDiv.textContent += "Fact: Websites run in sandbox!\n";
+
+                        }, 2000);
+
+                        }, 2000);
+
+                        }, 2000);
+
+                        }, 2000);
+
+                        }, 2000);
+
+                        }, 2000);
+
+                        }, 6000);
+                        }
+        }
+    </script>
+
+</body>
+</html>
