@@ -4,4 +4,5 @@ This directory is for projects belonging to the web stack(JS, HTML and CSS).
 
 Current projects:
 
-* prankpage-songs  -> A small prank page prentnding to be a music collection website.
+* prankpage-songs.html  -> A small prank page prentnding to be a music collection website.
+* favourite-5-animals.html -> Pictures of 5 animals using html `img` tag and their names.
