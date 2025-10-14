@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>
+    WORD COUNTER
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    margin:auto;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+
+}
+
+
+textarea {
+    background-color: aquamarine;
+    color: blueviolet;
+    text-shadow: blueviolet;
+    font-size:xx-large;
+    font-style: oblique;
+    font-family:fantasy;
+    outline: 2px;
+    border-style: solid;
+    border-radius: 9px;
+    border-color: black;
+    outline-color: blue;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+h1 {
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    font-family: cursive;
+    font-size: 15px;
+    color: blueviolet;
+}
+
+input {
+    color: blanchedalmond;
+    background-color: black;
+    height: 40px;
+    width: 70px;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+}
+
+.areaBox{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="head">
+<h1 id="h1">
+WORD COUNTER
+</h1>
+</div>
+
+<div class="areaBox">
+<textarea id="textArea" oninput="myFunction()" cols="65" rows="10" placeholder="TYPE OR PASTE THE TEXT WHOSE WORDS YOU WANT TO COUNT....."></textarea>
+</div>
+  
+<div class="ResultBar">
+<input label="To show the result" placeholder="Word Count here..." id="input" class="input" disabled />
+</div>
+
+<script>
+
+function myFunction() {
+    let text = document.getElementById('textArea').value ;   
+    let trimmedText =  text.trim()
+const myArray = trimmedText.split(/\s+/) ;
+let resultTextLen = myArray.length ;
+
+    document.getElementById('input').value = resultTextLen ;
+
+const r = Math.floor(Math.random() * 256 ) ;
+const g = Math.floor(Math.random() * 256 ) ;
+const b = Math.floor(Math.random() * 256 ) ;
+
+        let rgb = "rgb("+ r + " , " + g + " , " + b + " )" ;
+
+document.getElementById("h1").style.color = rgb ;
+
+if (text.length < 1){
+    document.getElementById('input').value = "0" ;
+}
+}
+
+
+
+</script>
+</body>
+</html>
