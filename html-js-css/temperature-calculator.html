@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Temperature Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h4 {
+      color: indigo;
+      font-style: oblique;
+      justify-content: center;
+      align-items: center;
+      justify-self: center;
+      align-self: center;
+      font-size: xx-large;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      background-color: lightblue;
+      color: purple;
+      border-color: black;
+      border-style: double;
+      border-radius: 3px;
+      margin-top: 6px;
+      display: flexbox;
+      margin: 6px;
+      padding: 24px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-style: bold;
+      font-size: larger;
+      height: auto;
+    }
+
+    .container {
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-box {
+      background-color: black;
+      color: white;
+      border-style: solid;
+      border-color: blueviolet;
+      border-width: 4px;
+      border-radius: 3px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      padding: 3px;
+      color: black;
+    }
+
+    .button-small {
+      min-height: 20px;
+      min-width: 50px;
+      margin: 2px;
+      border-color: black;
+      color: black;
+      background-color: aqua;
+      padding: 2px;
+      text-align: center;
+      display: flex;
+    }
+
+    #output-box {
+      background-color: white;
+      color: black;
+      border-style: dotted;
+      border-color: black;
+      margin-bottom: 20px;
+      display: flex;
+    }
+
+    .center {
+      justify-content: center;
+      display: flex;
+    }
+
+    .border-container {
+      background-color: darkcyan;
+      border-radius: 8px;
+      border-style: solid;
+      border-color: black;
+      border-width: 15px;
+      display: flex;
+    }
+
+    h5 {
+      font-size: 50px;
+      color: blue;
+      align-items: center;
+      justify-content: center;
+      font-family: fantasy;
+      display: flex;
+    }
+
+    .convert-btn {
+      padding: 20px;
+      text-align: center;
+      margin: 5px;
+      color: black;
+      background-color: aqua;
+      border-color: black;
+      border-style: solid;
+      border-radius: 4px;
+      height: 80px;
+      width: 150px;
+    }
+
+    .action-btn {
+      padding: 20px;
+      text-align: center;
+      margin: 5px;
+      color: black;
+      background-color: chartreuse;
+      border-color: black;
+      border-style: solid;
+      border-radius: 4px;
+      height: 100px;
+      width: 200px;
+    }
+
+    .center-flex {
+      justify-self: center;
+      align-self: center;
+    }
+
+    .result-box {
+      justify-self: center;
+      align-self: center;
+      border-color: deeppink;
+      border-width: 3px;
+      border-radius: 4px;
+      border-style: solid;
+    }
+
+    #fahrenheitInput,
+    #celsiusInput,
+    #kelvinInput {
+      height: 80px;
+      width: 150px;
+      margin: 5px;
+      border-color: black;
+      border-style: solid;
+      border-radius: 4px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body bgcolor="lightblue">
+  <h5>TEMPERATURE CALCULATOR</h5>
+
+  <div class="result-box">
+    <input id="fahrenheitInput" type="number" placeholder="IN FAHRENHEIT..">
+    <button type="button" onclick="convertFahrenheitToCelsius()" class="convert-btn" id="toCelsiusBtn">CELSIUS</button>
+    <button type="button" onclick="convertFahrenheitToKelvin()" class="convert-btn" id="toKelvinBtn">KELVIN</button>
+    <br>
+
+    <input id="celsiusInput" type="number" placeholder="IN CELSIUS..">
+    <button type="button" onclick="convertCelsiusToFahrenheit()" class="convert-btn" id="toFahrenheitBtn">FAHRENHEIT</button>
+    <button type="button" onclick="convertCelsiusToKelvin()" class="convert-btn" id="toKelvinFromCelsiusBtn">KELVIN</button>
+    <br>
+
+    <input id="kelvinInput" type="number" placeholder="IN KELVIN...">
+    <button type="button" onclick="convertKelvinToFahrenheit()" class="convert-btn" id="toFahrenheitFromKelvinBtn">FAHRENHEIT</button>
+    <button type="button" onclick="convertKelvinToCelsius()" class="convert-btn" id="toCelsiusFromKelvinBtn">CELSIUS</button>
+    <br>
+  </div>
+
+  <div class="center-flex">
+    <button type="button" onclick="clearTemperatureFields()" id="clearFieldsBtn" class="action-btn">CLEAR INPUT FIELDS</button>
+  </div>
+
+  <script>
+    function clearTemperatureFields() {
+      document.getElementById("fahrenheitInput").value = '';
+      document.getElementById("celsiusInput").value = '';
+      document.getElementById("kelvinInput").value = '';
+
+      document.getElementById("toCelsiusBtn").textContent = "CELSIUS";
+      document.getElementById("toKelvinBtn").textContent = "KELVIN";
+      document.getElementById("toFahrenheitBtn").textContent = "FAHRENHEIT";
+      document.getElementById("toKelvinFromCelsiusBtn").textContent = "KELVIN";
+      document.getElementById("toFahrenheitFromKelvinBtn").textContent = "FAHRENHEIT";
+      document.getElementById("toCelsiusFromKelvinBtn").textContent = "CELSIUS";
+
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      const color = `rgb(${r}, ${g}, ${b})`;
+      document.body.style.backgroundColor = color;
+    }
+
+    function convertFahrenheitToCelsius() {
+      const x = parseFloat(document.getElementById("fahrenheitInput").value);
+      const celsius = 0.556 * (x - 32);
+      document.getElementById("toCelsiusBtn").textContent = celsius + " degree ";
+    }
+
+    function convertFahrenheitToKelvin() {
+      const x = parseFloat(document.getElementById("fahrenheitInput").value);
+      const kelvin = (x - 32) * 5 / 9 + 273.15;
+      document.getElementById("toKelvinBtn").textContent = kelvin + " degree ";
+    }
+
+    function convertCelsiusToFahrenheit() {
+      const x = parseFloat(document.getElementById("celsiusInput").value);
+      const fahrenheit = 1.8 * x + 32;
+      document.getElementById("toFahrenheitBtn").textContent = fahrenheit + " degree ";
+    }
+
+    function convertCelsiusToKelvin() {
+      const x = parseFloat(document.getElementById("celsiusInput").value);
+      const kelvin = x + 273.15;
+      document.getElementById("toKelvinFromCelsiusBtn").textContent = kelvin + " degree ";
+    }
+
+    function convertKelvinToFahrenheit() {
+      const x = parseFloat(document.getElementById("kelvinInput").value);
+      const fahrenheit = (x - 273.15) * 1.8 + 32;
+      document.getElementById("toFahrenheitFromKelvinBtn").textContent = fahrenheit + " degree ";
+    }
+
+    function convertKelvinToCelsius() {
+      const x = parseFloat(document.getElementById("kelvinInput").value);
+      const celsius = x - 273.15;
+      document.getElementById("toCelsiusFromKelvinBtn").textContent = celsius + " degree ";
+    }
+  </script>
+</body>
+</html>
