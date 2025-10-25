@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+h4 
+{
+   color: indigo;
+   font-style: oblique;
+   justify-content: center;
+   align-items: center;
+   font-size: xx-large;
+   display: flex;
+}
+
+body 
+{
+   background-color: lightblue;
+   color: purple;
+   border-color: black;
+   border-style: double;
+   border-radius: 3px;
+   margin-top: 6px;
+   display: flex;
+   flex-direction: column;
+   margin: 6px;
+   padding: 24px;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-style: bold;
+   font-size: larger;
+   height: auto;
+}
+
+.input-box {
+   justify-self: center;
+   align-self: center;
+   justify-content: center;
+   align-items: center;
+   display: flexbox;
+}
+
+.inp {
+   background-color: black;
+   color: white;
+   border-style: solid;
+   border-color: blueviolet;
+   border-width: 4px;
+   border-radius: 3px;
+   text-align: left;
+   display: flexbox;
+}
+
+.btn {
+   display: flexbox;
+   padding: 3px;
+   color: black;
+   text-align: center;
+   justify-self: center;
+   align-self: center;
+   justify-content: center;
+   align-items: center;
+}
+
+.button {
+   min-height: 20px;
+   min-width: 50px;
+   margin: 2px;
+   border-color: black;
+   color: black;
+   background-color: aqua;
+   padding: 2px;
+   text-align: center;
+   display: flexbox;
+}
+
+#resultDisplay {
+   background-color: white;
+   color: black;
+   border-style: dotted;
+   border-color: black;
+   margin-bottom: 20px;
+   display: flexbox;
+}
+
+.calcContainer {
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+   justify-self: center;
+   display: flexbox;
+}
+
+.calcBox {
+   background-color: darkcyan;
+   border-radius: 8px;
+   border-style: solid;
+   border-color: black;
+   border-width: 15px;
+   display: flexbox;
+}
+
+.heading {
+   font-family: fantasy;
+   font-size: 50px;
+   color: blue;
+   align-items: center;
+   justify-content: center;
+   justify-self: center;
+   align-self: center;
+   display: flexbox;
+}
+
+.btnCalc {
+   padding: 20px;
+   text-align: center;
+   margin: 5px;
+   color: black;
+   background-color: aqua;
+   border-color: black;
+   border-style: solid;
+   border-radius: 4px;
+   height: 80px;
+   width: 150px;
+   display: flexbox;
+}
+
+.btnTempClear {
+   padding: 20px;
+   text-align: center;
+   margin: 5px;
+   color: black;
+   background-color: chartreuse;
+   border-color: black;
+   border-style: solid;
+   border-radius: 4px;
+   height: 100px;
+   width: 200px;
+   display: flexbox;
+}
+
+.tempContainer {
+   align-items: center;
+   justify-content: center;
+   align-self: center;
+   justify-self: center;
+   display: flexbox;
+}
+
+.inputRow {
+   align-items: center;
+   justify-content: center;
+   align-self: center;
+   justify-self: center;
+   align-content: center;
+   justify-items: center;
+   display: flexbox;
+}
+
+.tempBox {
+   align-items: center;
+   justify-content: center;
+   align-self: center;
+   justify-self: center;
+   border-color: deeppink;
+   border-width: 3px;
+   border-radius: 4px;
+   border-style: solid;
+   display: flexbox;
+}
+
+#tempF, #tempC, #tempK {
+   height: 80px;
+   width: 150px;
+   margin: 5px;
+   border-color: black;
+   border-style: solid;
+   border-radius: 4px;
+   text-align: center;
+   display: flexbox;
+}
+</style>
+
+</head>
+<body bgcolor="lightblue">
+
+<!-- Calculator Section  -->
+<div class="calcBox">
+<h4>SIMPLE CALCULATOR</h4>
+<div class="inputRow">
+<div class="input-box">
+<input placeholder="1st number.." id="num1" type="number" class="inp">
+<input placeholder="2nd number.." id="num2" type="number" class="inp">
+</div>
+
+<div class="btn">
+<button type="button" onclick="calcAdd()" class="button">ADD</button>
+<button type="button" onclick="calcSubtract()" class="button">SUBTRACT</button>
+<button type="button" onclick="calcMultiply()" class="button">MULTIPLY</button>
+<button type="button" onclick="calcDivide()" class="button">DIVIDE</button>
+<button type="button" onclick="calcPercentage()" class="button">PERCENTAGE</button>
+<button type="button" onclick="calcClear()" class="button">CLEAR</button>
+</div>
+
+<div class="calcContainer">
+<input placeholder="Result..." id="resultDisplay" disabled />
+</div>
+</div>
+</div>
+
+<!--  Temperature Section  -->
+<div class="heading"><h5>TEMPERATURE CALCULATOR</h5></div>
+
+<div class="tempBox">
+<input id="tempF" type="number" placeholder="IN FAHRENHEIT..">
+<button type="button" onclick="fToC()" class="btnCalc" id="btnFtoC">CELSIUS</button>
+<button type="button" onclick="fToK()" class="btnCalc" id="btnFtoK">KELVIN</button>
+<br>
+<input id="tempC" type="number" placeholder="IN CELSIUS..">
+<button type="button" onclick="cToF()" class="btnCalc" id="btnCtoF">FAHRENHEIT</button>
+<button type="button" onclick="cToK()" class="btnCalc" id="btnCtoK">KELVIN</button>
+<br>
+<input id="tempK" type="number" placeholder="IN KELVIN...">
+<button type="button" onclick="kToF()" class="btnCalc" id="btnKtoF">FAHRENHEIT</button>
+<button type="button" onclick="kToC()" class="btnCalc" id="btnKtoC">CELSIUS</button>
+<br>
+</div>
+
+<div class="tempContainer">
+<button type="button" onclick="clearAllTemps()" id="btnClearTemps" class="btnTempClear">CLEAR INPUT FIELDS</button>
+</div>
+
+<script>
+
+function calcAdd(){
+    let val1 = parseFloat(document.getElementById("num1").value);
+    let val2 = parseFloat(document.getElementById("num2").value);
+    let sum = val1 + val2;
+    document.getElementById("resultDisplay").value = "sum: " + sum;
+}
+
+function calcSubtract(){
+    let val1 = parseFloat(document.getElementById("num1").value);
+    let val2 = parseFloat(document.getElementById("num2").value);
+    let diff = val1 - val2;
+    document.getElementById("resultDisplay").value = "difference: " + diff;
+}
+
+function calcMultiply(){
+    let val1 = parseFloat(document.getElementById("num1").value);
+    let val2 = parseFloat(document.getElementById("num2").value);
+    let product = val1 * val2;
+    document.getElementById("resultDisplay").value = "product: " + product;
+}
+
+function calcDivide(){
+    let val1 = parseFloat(document.getElementById("num1").value);
+    let val2 = parseFloat(document.getElementById("num2").value);
+    let quotient = val1 / val2;
+    document.getElementById("resultDisplay").value = "quotient: " + quotient;
+}
+
+function calcPercentage(){
+    let val1 = parseFloat(document.getElementById("num1").value);
+    let val2 = parseFloat(document.getElementById("num2").value);
+    let percent = (val1 / 100) * val2;
+    document.getElementById("resultDisplay").value = "percentage: " + percent;
+}
+
+function calcClear(){
+    document.getElementById("num1").value = '';
+    document.getElementById("num2").value = '';
+    document.getElementById("resultDisplay").value = '';
+}
+
+function fToC(){
+    let f = parseFloat(document.getElementById("tempF").value);
+    let c = 0.556 * (f - 32);
+    document.getElementById("btnFtoC").textContent = c + " degree";
+}
+
+function fToK(){
+    let f = parseFloat(document.getElementById("tempF").value);
+    let k = (f - 32) * 5/9 + 273.15;
+    document.getElementById("btnFtoK").textContent = k + " degree";
+}
+
+function cToF(){
+    let c = parseFloat(document.getElementById("tempC").value);
+    let f = 1.8 * c + 32;
+    document.getElementById("btnCtoF").textContent = f + " degree";
+}
+
+function cToK(){
+    let c = parseFloat(document.getElementById("tempC").value);
+    let k = c + 273.15;
+    document.getElementById("btnCtoK").textContent = k + " degree";
+}
+
+function kToF(){
+    let k = parseFloat(document.getElementById("tempK").value);
+    let f = (k - 273.15) * 1.8 + 32;
+    document.getElementById("btnKtoF").textContent = f + " degree";
+}
+
+function kToC(){
+    let k = parseFloat(document.getElementById("tempK").value);
+    let c = k - 273.15;
+    document.getElementById("btnKtoC").textContent = c + " degree";
+}
+
+function clearAllTemps(){
+    document.getElementById("tempF").value = '';
+    document.getElementById("tempC").value = '';
+    document.getElementById("tempK").value = '';
+
+    document.getElementById("btnFtoC").textContent = "CELSIUS";
+    document.getElementById("btnFtoK").textContent = "KELVIN";
+    document.getElementById("btnCtoF").textContent = "FAHRENHEIT";
+    document.getElementById("btnCtoK").textContent = "KELVIN";
+    document.getElementById("btnKtoF").textContent = "FAHRENHEIT";
+    document.getElementById("btnKtoC").textContent = "CELSIUS";
+
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+}
+</script>
+
+</body>
+</html>

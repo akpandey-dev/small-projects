@@ -8,3 +8,4 @@ Current projects:
 * favourite-5-animals.html -> Pictures of 5 animals using html `img` tag and their names.
 * temperature-calculator-1.html -> Static temperature calculator made for large screen sizes.
 * word-counter.html -> Small, neat and clean word counter.
+* combined-calculator.html -> A small numerical calculator and a temperature calculator in a single page.
