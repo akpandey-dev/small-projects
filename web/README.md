@@ -9,3 +9,4 @@ Current projects:
 * temperature-calculator-1.html -> Static temperature calculator made for large screen sizes.
 * word-counter.html -> Small, neat and clean word counter.
 * combined-calculator.html -> A small numerical calculator and a temperature calculator in a single page.
+* html-glory.html -> A small tribute to HTML revisiting those days were webpages were written completely in HTML.
