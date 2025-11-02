@@ -1,4 +1,4 @@
-# Python
+# Python Projects
 
 This directory is for projects belonging to Python.
 

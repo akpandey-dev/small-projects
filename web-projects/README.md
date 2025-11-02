@@ -1,4 +1,4 @@
-# HTML JS CSS
+# Web Projects
 
 This directory is for projects belonging to the web stack(JS, HTML and CSS).
 
