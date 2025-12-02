@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ================== HEADINGS ================== */
+        h1 {
+            color: red;
+            font-size: xx-large;
+            font-style: italic;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        /* ================== INPUT ================== */
+        #nameInput {
+            display: block;
+            margin: 10px auto;
+            padding: 5px;
+            font-size: large;
+            color: darkred;
+            background-color: fuchsia;
+            border: 3px double;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        /* ================== BUTTON ================== */
+        #assignBtn {
+            display: block;
+            margin: 5px auto;
+            padding: 5px 10px;
+            color: cyan;
+            background-color: burlywood;
+            border: 2px solid blue;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: medium;
+        }
+
+        /* ================== CARD CONTAINER ================== */
+        .card {
+            background-color: yellow;
+            color: red;
+            border: 3px solid darkblue;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            margin: 10px auto;
+            max-width: 500px;
+            font-size: large;
+        }
+
+        /* ================== TEXT ================== */
+        .greet p {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        #recipientName {
+            color: deeppink;
+        }
+
+        /* ================== IMAGE ================== */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button id="assignBtn" onclick="assignName()">Click to assign your name to the birthday card</button>
+
+    <div class="card">
+        <h1>HAPPY BIRTHDAY</h1>
+        <div class="greet">
+            <p>Happy Birthday Dear <span id="recipientName">________</span>!</p>
+            <p>May you get everything you want!</p>
+            <div class="image-container">
+                <img src="https://i.pinimg.com/736x/04/a6/9a/04a69a0ee9849a807dddb49530289dc5.jpg" alt="Birthday Image">
+            </div>
+            <p>A birthday is a celebration of the journey you've taken and the adventures that await.</p>
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_RDa49bPcwxNEhwSoKH5vSjCWFrt3OBX4gw&s" alt="Embedded Birthday Image">
+            </div>
+            <p>Once again, best wishes on your birthday.</p>
+        </div>
+    </div>
+
+    <script>
+        function assignName() {
+            const name = document.getElementById("nameInput").value.trim();
+            if(name) {
+                document.getElementById("recipientName").textContent = name;
+                document.getElementById("nameInput").value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>

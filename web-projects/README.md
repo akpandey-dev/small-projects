@@ -10,3 +10,4 @@ Current projects:
 * word-counter.html -> Small, neat and clean word counter.
 * combined-calculator.html -> A small numerical calculator and a temperature calculator in a single page.
 * html-glory.html -> A small tribute to HTML revisiting those days were webpages were written completely in HTML.
+* happy-birthday.html -> A happy birthday greeting card.
