@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Temperature Calculator</title>
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h5 {
+            font-family: fantasy;
+            font-size: 40px;
+            color: blue;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            align-self: center;
+            display: flexbox;
+        }
+        body {
+            background-color: lightblue;
+            color: purple;
+            margin-top: 6px;
+            display: flexbox;
+            margin: 6px;
+            padding: 24px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-style: bold;
+            font-size: larger;
+            height: auto;
+        }
+        .container {
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            align-self: center;
+            border-color: deeppink;
+            border-width: 3px;
+            border-radius: 4px;
+            border-style: solid;
+            display: flexbox;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        #mainWrapper {
+            max-height: 7000px;
+            min-height:450px;
+            height: auto;
+            width: auto;
+            border-color: blue;
+            border-width: 8px;
+            border-style: solid;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            align-self: center;
+            align-content: center;
+            justify-items: center;
+            display:flexbox;
+        }
+        .inputGroup {
+            display: flex;
+            gap: 2%;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 96vw;
+            max-width: 500px;
+            margin: 3px;
+        }
+        .inputGroup input {
+            width: 32%;
+            height: 12vw;
+            font-size: clamp(8px, 3.5vw, 18px);
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border-style: double;
+            border-color: blueviolet;
+            border-width: 2px;
+            color: blueviolet;
+            background-color: beige;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .inputGroup button {
+            width: 32%;
+            height: 12vw;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 6px;
+            color: blueviolet;
+            background-color: aqua;
+            border-style: double;
+            border-color: blueviolet;
+            border-width: 2px;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: clamp(8px, 3.5vw, 18px);
+        }
+        .clearWrapper {
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            align-self: center;
+            display: flexbox;
+        }
+        .clearButton {
+            padding: 20px;
+            text-align: center;
+            margin: 5px;
+            color: black;
+            background-color: chartreuse;
+            border-color: black;
+            border-style: solid;
+            border-radius: 4px;
+            height: 100px;
+            width: 200px;
+            display: flexbox;
+        }
+    </style>
+</head>
+<body>
+
+<div id="mainWrapper">
+
+    <h5>TEMPERATURE</h5>
+    <h5>CALCULATOR</h5>
+
+    <div class="container">
+        <div class="inputGroup">
+            <input id="inputF" type="number" placeholder="IN FAHRENHEIT..">
+            <button type="button" onclick="fToC()" id="btnFtoC">CELSIUS</button>
+            <button type="button" onclick="fToK()" id="btnFtoK">KELVIN</button>
+        </div>
+
+        <div class="inputGroup">
+            <input id="inputC" type="number" placeholder="IN CELSIUS..">
+            <button type="button" onclick="cToF()" id="btnCtoF">FAHRENHEIT</button>
+            <button type="button" onclick="cToK()" id="btnCtoK">KELVIN</button>
+        </div>
+
+        <div class="inputGroup">
+            <input id="inputK" type="number" placeholder="IN KELVIN...">
+            <button type="button" onclick="kToF()" id="btnKtoF">FAHRENHEIT</button>
+            <button type="button" onclick="kToC()" id="btnKtoC">CELSIUS</button>
+        </div>
+    </div>
+
+    <div class="clearWrapper">
+        <button type="button" onclick="clearInputs()" id="btnClear" class="clearButton">CLEAR INPUT FIELDS</button>
+    </div>
+
+</div>
+
+<script>
+    function clearInputs() {
+        document.getElementById("inputF").value = '';
+        document.getElementById("inputC").value = '';
+        document.getElementById("inputK").value = '';
+
+        document.getElementById("btnFtoC").textContent = "CELSIUS";
+        document.getElementById("btnFtoK").textContent = "KELVIN";
+        document.getElementById("btnCtoF").textContent = "FAHRENHEIT";
+        document.getElementById("btnCtoK").textContent = "KELVIN";
+        document.getElementById("btnKtoF").textContent = "FAHRENHEIT";
+        document.getElementById("btnKtoC").textContent = "CELSIUS";
+
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    }
+
+    function fToC() {
+        let f = parseFloat(document.getElementById("inputF").value);
+        let c = 0.556 * (f - 32);
+        document.getElementById("btnFtoC").textContent = c + " degree";
+    }
+
+    function fToK() {
+        let f = parseFloat(document.getElementById("inputF").value);
+        let k = (f - 32) * 5 / 9 + 273.15;
+        document.getElementById("btnFtoK").textContent = k + " degree";
+    }
+
+    function cToF() {
+        let c = parseFloat(document.getElementById("inputC").value);
+        let f = 1.8 * c + 32;
+        document.getElementById("btnCtoF").textContent = f + " degree";
+    }
+
+    function cToK() {
+        let c = parseFloat(document.getElementById("inputC").value);
+        let k = c + 273.15;
+        document.getElementById("btnCtoK").textContent = k + " degree";
+    }
+
+    function kToF() {
+        let k = parseFloat(document.getElementById("inputK").value);
+        let f = (k - 273.15) * 1.8 + 32;
+        document.getElementById("btnKtoF").textContent = f + " degree";
+    }
+
+    function kToC() {
+        let k = parseFloat(document.getElementById("inputK").value);
+        let c = k - 273.15;
+        document.getElementById("btnKtoC").textContent = c + " degree";
+    }
+</script>
+
+</body>
+</html>
