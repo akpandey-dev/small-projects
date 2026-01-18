@@ -4,4 +4,4 @@ This directory is for projects belonging to the language CPP.
 
 Current projects:
 
-0
+* calculator.cpp -> CLI based calculator that takes inputs and give direct outputs.
