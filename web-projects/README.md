@@ -12,3 +12,4 @@ Current projects:
 * html-glory.html -> A small tribute to HTML revisiting those days were webpages were written completely in HTML.
 * happy-birthday.html -> A happy birthday greeting card.
 * temperature-calculator-2.html -> A responsive version of the above one suitable for small as well as large screens.
+* word-counter-2.html -> An upgraded and responsive version of the old word-counter.
