@@ -13,3 +13,5 @@ Current projects:
 * happy-birthday.html -> A happy birthday greeting card.
 * temperature-calculator-2.html -> A responsive version of the above one suitable for small as well as large screens.
 * word-counter-2.html -> An upgraded and responsive version of the old word-counter.
+
+        More projects coming soon...
