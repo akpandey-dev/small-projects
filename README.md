@@ -1,4 +1,4 @@
-# 00-small-projects
+# Small Projects
 
  A collection of small coding projects and experiments in HTML, JS, and Python. Mini projects, games, and tools for practice and learning.
  These mini projects, games, and utilities are designed for **learning, practice, experimentation, and fun**.
@@ -43,7 +43,7 @@ Each folder contains its own `README.md`.
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/akpandey-dev/00-small-projects.git
+   git clone https://github.com/akpandey-dev/small-projects.git
    ```
 2. Navigate to the folder of your interest.
 3. Open files in the appropriate environment (eg., text editor, IDE, or browser).
