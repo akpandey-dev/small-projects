@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@types/node": "^25.6.0"
+  },
+  "type": "module",
+  "name": "project-manager",
+  "version": "0.0.1",
+  "bin": {
+    "pjm": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "node dist/index.js"
+  },
+  "main": "./dist/index.js"
+}
